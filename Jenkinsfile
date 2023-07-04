@@ -20,6 +20,7 @@ pipeline {
       steps {
         parallel(
           "Deploy to Production": {
+            input(message: 'Do you want to deploy to production?', id: 'OK')
             echo 'Deploying to Production...'
             // Add deployment to production steps here
           },
