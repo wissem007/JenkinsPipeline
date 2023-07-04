@@ -4,13 +4,15 @@ pipeline {
   stages {
     stage('Build') {
       steps {
-        // Build steps here
+        echo 'Building...'
+        // Add build steps here
       }
     }
 
     stage('Test') {
       steps {
-        // Test steps here
+        echo 'Testing...'
+        // Add test steps here
       }
     }
 
@@ -18,13 +20,16 @@ pipeline {
       steps {
         parallel(
           "Deploy to Production": {
-            // Deployment to production code here
+            echo 'Deploying to Production...'
+            // Add deployment to production steps here
           },
           "Deploy to Staging": {
-            // Deployment to staging code here
+            echo 'Deploying to Staging...'
+            // Add deployment to staging steps here
           },
           "Deploy to Testing": {
-            // Deployment to testing code here
+            echo 'Deploying to Testing...'
+            // Add deployment to testing steps here
           }
         )
       }
